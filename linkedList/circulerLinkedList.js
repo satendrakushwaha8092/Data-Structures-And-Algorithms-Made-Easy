@@ -40,7 +40,7 @@ class circularLinkedList {
   }
 
   insertAtgivenPosition(data, position) {
-    let count=0
+    let count = 0;
     const node = new Node();
     node.data = data;
     node.next = node;
@@ -48,16 +48,16 @@ class circularLinkedList {
       this.head = node;
     } else {
       let i = this.head;
-      while (i.next != this.head){
-      count++ 
-      if(count==position){
-        const prev=i.next
-        i.next=node
-        node.next=prev
-        console.log("data:",i);
+      while (i.next != this.head) {
+        count++;
+        if (count == position) {
+          const prev = i.next;
+          i.next = node;
+          node.next = prev;
+          console.log("data:", i);
+        }
+        i = i.next;
       }
-      i = i.next;
-    }
     }
   }
 
@@ -88,5 +88,5 @@ cl.insertAtLast(4);
 cl.insertAtLast(5);
 cl.insertAtBeginingofList(1);
 cl.insertAtBeginingofList(0);
-cl.insertAtgivenPosition(100,3)
+cl.insertAtgivenPosition(100, 3);
 cl.print2();
